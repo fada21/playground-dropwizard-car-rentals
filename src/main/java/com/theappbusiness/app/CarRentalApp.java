@@ -1,7 +1,8 @@
 package com.theappbusiness.app;
 
-import com.theappbusiness.db.VehicleDAO;
+import com.theappbusiness.content.VehicleContentManager;
 import com.theappbusiness.health.IsStartedHealthCheck;
+import com.theappbusiness.resources.VehicleResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -25,8 +26,12 @@ public class CarRentalApp extends Application<CarRentalConfiguration> {
     public void run(CarRentalConfiguration carRentalConfiguration, Environment environment) throws Exception {
         environment.healthChecks().register("isStarted", new IsStartedHealthCheck(environment));
 
-        final VehicleDAO vehicleDAO = new VehicleDAO();
-        final VehiclesResource vehiclesResource = new VehiclesResource(vehicleDAO);
+        final VehicleContentManager vehicleMngr = new VehicleContentManager();
+
+        final VehiclesResource vehiclesResource = new VehiclesResource(vehicleMngr);
         environment.jersey().register(vehiclesResource);
+
+        final VehicleResource vehicleResource = new VehicleResource(vehicleMngr);
+        environment.jersey().register(vehicleResource);
     }
 }

@@ -1,30 +1,34 @@
 package com.theappbusiness.resources;
 
-import com.theappbusiness.db.VehicleDAO;
+import com.theappbusiness.content.VehicleContentManager;
+import com.theappbusiness.model.Vehicle;
 import io.dropwizard.hibernate.UnitOfWork;
-import com.theappbusiness.json.VehicleJson;
+import io.dropwizard.jersey.params.LongParam;
 import lombok.Data;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-/**
- *
- */
 @Path("/vehicles")
 @Produces(MediaType.APPLICATION_JSON)
 @Data
 public class VehiclesResource {
 
-    final VehicleDAO vehicleDAO;
+    final VehicleContentManager vehicleMngr;
 
     @GET
     @UnitOfWork
-    public List<VehicleJson> listVehicles() {
-
-        return vehicleDAO.findAll(); // TODO ended here
+    public List<Vehicle> listVehicles() {
+        ResourceUtils.delay();
+        return vehicleMngr.findAll();
     }
+
+    @POST
+    @UnitOfWork
+    public Vehicle createVehicle(Vehicle vehicle) {
+        vehicleMngr.store(vehicle);
+        return vehicle;
+    }
+
 }
