@@ -1,6 +1,6 @@
-package db;
+package com.theappbusiness.db;
 
-import json.VehicleJson;
+import com.theappbusiness.json.VehicleJson;
 
 import java.math.BigDecimal;
 import java.util.Arrays;

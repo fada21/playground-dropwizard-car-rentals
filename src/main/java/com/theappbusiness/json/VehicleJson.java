@@ -1,4 +1,4 @@
-package json;
+package com.theappbusiness.json;
 
 import lombok.Data;
 import lombok.experimental.Builder;

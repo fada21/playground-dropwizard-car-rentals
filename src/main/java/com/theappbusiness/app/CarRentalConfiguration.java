@@ -1,4 +1,4 @@
-package app;
+package com.theappbusiness.app;
 
 import io.dropwizard.Configuration;
 

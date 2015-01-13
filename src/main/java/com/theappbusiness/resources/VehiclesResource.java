@@ -1,8 +1,8 @@
-package resources;
+package com.theappbusiness.resources;
 
-import db.VehicleDAO;
+import com.theappbusiness.db.VehicleDAO;
 import io.dropwizard.hibernate.UnitOfWork;
-import json.VehicleJson;
+import com.theappbusiness.json.VehicleJson;
 import lombok.Data;
 
 import javax.ws.rs.GET;
