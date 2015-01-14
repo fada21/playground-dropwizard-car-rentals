@@ -8,16 +8,15 @@ import lombok.experimental.Builder;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @JsonSnakeCase
-public class Vehicle implements HasId {
+public class Account implements HasId {
 
     long id;
     @NotEmpty
-    String registration;
-    String type;
-    double pricePerHour; // TODO should have used double but was not working out of the box
-
+    String name;
+    boolean isAdmin;
+    String token;
 }

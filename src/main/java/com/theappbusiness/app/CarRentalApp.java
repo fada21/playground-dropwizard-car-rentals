@@ -1,12 +1,14 @@
 package com.theappbusiness.app;
 
+import com.theappbusiness.content.AccountContentManager;
 import com.theappbusiness.content.VehicleContentManager;
 import com.theappbusiness.health.IsStartedHealthCheck;
-import com.theappbusiness.resources.VehicleResource;
+import com.theappbusiness.model.Account;
+import com.theappbusiness.resources.AccountsResource;
+import com.theappbusiness.resources.VehiclesResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
-import com.theappbusiness.resources.VehiclesResource;
 
 /**
  *
@@ -27,11 +29,11 @@ public class CarRentalApp extends Application<CarRentalConfiguration> {
         environment.healthChecks().register("isStarted", new IsStartedHealthCheck(environment));
 
         final VehicleContentManager vehicleMngr = new VehicleContentManager();
-
         final VehiclesResource vehiclesResource = new VehiclesResource(vehicleMngr);
         environment.jersey().register(vehiclesResource);
 
-        final VehicleResource vehicleResource = new VehicleResource(vehicleMngr);
-        environment.jersey().register(vehicleResource);
+        final AccountContentManager accountMngr = new AccountContentManager();
+        AccountsResource accountsResource = new AccountsResource(accountMngr);
+        environment.jersey().register(accountsResource);
     }
 }

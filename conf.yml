@@ -1,1 +1,5 @@
-server
+server:
+  type: default
+
+logging:
+  level: INFO
