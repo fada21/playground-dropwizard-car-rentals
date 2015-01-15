@@ -1,6 +1,5 @@
 package com.theappbusiness.model;
 
-import io.dropwizard.jackson.JsonSnakeCase;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@JsonSnakeCase
 public class Vehicle implements HasId {
 
     long id;

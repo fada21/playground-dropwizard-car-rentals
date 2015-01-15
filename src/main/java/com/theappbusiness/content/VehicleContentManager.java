@@ -29,4 +29,6 @@ public class VehicleContentManager extends BaseMockedContentManager<Vehicle> {
         return vehiclesMap;
     }
 
+
+
 }

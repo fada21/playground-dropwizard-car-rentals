@@ -11,10 +11,10 @@ public class AccountContentManager extends BaseMockedContentManager<Account> {
 
     public AccountContentManager() {
         Account.AccountBuilder builder = Account.builder();
-        accountsMap.put(1l, builder.id(1).name("Adam Admins").isAdmin(true).token("").build());
-        accountsMap.put(2l, builder.id(2).name("Brunhilde Bubble").isAdmin(false).token("").build());
-        accountsMap.put(3l, builder.id(3).name("Cecil Cockburns").isAdmin(false).token("").build());
-        accountsMap.put(4l, builder.id(4).name("Daniel Dude").isAdmin(false).token("").build());
+        accountsMap.put(1l, builder.id(1).name("Adam Admins").isAdmin(true).token("A").build());
+        accountsMap.put(2l, builder.id(2).name("Brunhilde Bubble").isAdmin(false).token("B").build());
+        accountsMap.put(3l, builder.id(3).name("Cecil Cockburns").isAdmin(false).token("C").build());
+        accountsMap.put(4l, builder.id(4).name("Daniel Dude").isAdmin(false).token("D").build());
     }
 
     @Override

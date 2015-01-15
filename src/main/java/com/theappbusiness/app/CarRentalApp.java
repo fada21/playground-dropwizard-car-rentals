@@ -1,10 +1,12 @@
 package com.theappbusiness.app;
 
 import com.theappbusiness.content.AccountContentManager;
+import com.theappbusiness.content.RentalContentManager;
 import com.theappbusiness.content.VehicleContentManager;
 import com.theappbusiness.health.IsStartedHealthCheck;
 import com.theappbusiness.model.Account;
 import com.theappbusiness.resources.AccountsResource;
+import com.theappbusiness.resources.RentalsResource;
 import com.theappbusiness.resources.VehiclesResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -35,5 +37,10 @@ public class CarRentalApp extends Application<CarRentalConfiguration> {
         final AccountContentManager accountMngr = new AccountContentManager();
         AccountsResource accountsResource = new AccountsResource(accountMngr);
         environment.jersey().register(accountsResource);
+
+        final RentalContentManager rentalContentManager = new RentalContentManager(accountMngr, vehicleMngr);
+        RentalsResource rentalsResource = new RentalsResource(rentalContentManager);
+        environment.jersey().register(rentalsResource);
     }
+    
 }
