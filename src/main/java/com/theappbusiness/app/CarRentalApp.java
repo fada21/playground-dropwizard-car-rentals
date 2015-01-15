@@ -4,10 +4,18 @@ import com.theappbusiness.content.AccountContentManager;
 import com.theappbusiness.content.RentalContentManager;
 import com.theappbusiness.content.VehicleContentManager;
 import com.theappbusiness.health.IsStartedHealthCheck;
-import com.theappbusiness.model.Account;
 import com.theappbusiness.resources.AccountsResource;
 import com.theappbusiness.resources.RentalsResource;
 import com.theappbusiness.resources.VehiclesResource;
+import com.wordnik.swagger.config.ConfigFactory;
+import com.wordnik.swagger.config.ScannerFactory;
+import com.wordnik.swagger.config.SwaggerConfig;
+import com.wordnik.swagger.jaxrs.config.DefaultJaxrsScanner;
+import com.wordnik.swagger.jaxrs.listing.ApiDeclarationProvider;
+import com.wordnik.swagger.jaxrs.listing.ApiListingResourceJSON;
+import com.wordnik.swagger.jaxrs.listing.ResourceListingProvider;
+import com.wordnik.swagger.jaxrs.reader.DefaultJaxrsApiReader;
+import com.wordnik.swagger.reader.ClassReaders;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -41,6 +49,23 @@ public class CarRentalApp extends Application<CarRentalConfiguration> {
         final RentalContentManager rentalContentManager = new RentalContentManager(accountMngr, vehicleMngr);
         RentalsResource rentalsResource = new RentalsResource(rentalContentManager);
         environment.jersey().register(rentalsResource);
+
+        initSwagger(environment);
     }
-    
+
+    private void initSwagger(Environment environment) {
+        environment.jersey().register(new ApiListingResourceJSON());
+        environment.jersey().register(new ApiDeclarationProvider());
+        environment.jersey().register(new ResourceListingProvider());
+
+        // Swagger Scanner, which finds all the resources for @Api Annotations
+        ScannerFactory.setScanner(new DefaultJaxrsScanner());
+
+        // Add the reader, which scans the resources and extracts the resource information
+        ClassReaders.setReader(new DefaultJaxrsApiReader());
+
+        SwaggerConfig config = ConfigFactory.config();
+        config.setApiVersion("0.0.1");
+    }
+
 }

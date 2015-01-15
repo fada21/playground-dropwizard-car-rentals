@@ -4,6 +4,7 @@ import com.theappbusiness.content.RentalContentManager;
 import com.theappbusiness.json.RentalStartJson;
 import com.theappbusiness.model.Account;
 import com.theappbusiness.model.Rental;
+import com.wordnik.swagger.annotations.Api;
 import io.dropwizard.jersey.PATCH;
 import io.dropwizard.jersey.params.LongParam;
 import org.joda.time.DateTime;
@@ -13,8 +14,11 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-@Path("/rentals")
+@Path(RentalsResource.PATH)
+@Api(value = RentalsResource.PATH, description = "Operations on rentals")
 public class RentalsResource extends CrudResource<Rental, RentalContentManager> {
+
+    public static final String PATH = "/rentals";
 
     public RentalsResource(RentalContentManager rentalContentManager) {
         super(rentalContentManager);
