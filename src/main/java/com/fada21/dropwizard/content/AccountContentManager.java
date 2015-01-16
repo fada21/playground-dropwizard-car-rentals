@@ -1,6 +1,6 @@
-package com.theappbusiness.content;
+package com.fada21.dropwizard.content;
 
-import com.theappbusiness.model.Account;
+import com.fada21.dropwizard.model.Account;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

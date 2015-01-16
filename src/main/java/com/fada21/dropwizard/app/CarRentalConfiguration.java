@@ -1,4 +1,4 @@
-package com.theappbusiness.app;
+package com.fada21.dropwizard.app;
 
 import io.dropwizard.Configuration;
 

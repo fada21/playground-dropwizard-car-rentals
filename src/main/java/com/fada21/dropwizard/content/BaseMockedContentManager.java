@@ -1,7 +1,6 @@
-package com.theappbusiness.content;
+package com.fada21.dropwizard.content;
 
-import com.theappbusiness.model.HasId;
-import com.theappbusiness.model.Vehicle;
+import com.fada21.dropwizard.model.HasId;
 
 import java.util.ArrayList;
 import java.util.List;

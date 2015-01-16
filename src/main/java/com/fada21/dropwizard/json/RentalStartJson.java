@@ -1,4 +1,4 @@
-package com.theappbusiness.model;
+package com.fada21.dropwizard.json;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,12 +9,10 @@ import lombok.experimental.Builder;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Rental implements HasId {
+public class RentalStartJson {
 
-    long id;
-    long accountId;
+    long start;
+    String token;
     long vehicleId;
-    long startHire;
-    long endHire;
 
 }

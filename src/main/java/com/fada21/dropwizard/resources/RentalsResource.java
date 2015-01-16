@@ -1,9 +1,9 @@
-package com.theappbusiness.resources;
+package com.fada21.dropwizard.resources;
 
-import com.theappbusiness.content.RentalContentManager;
-import com.theappbusiness.json.RentalStartJson;
-import com.theappbusiness.model.Account;
-import com.theappbusiness.model.Rental;
+import com.fada21.dropwizard.content.RentalContentManager;
+import com.fada21.dropwizard.json.RentalStartJson;
+import com.fada21.dropwizard.model.Rental;
+import com.fada21.dropwizard.model.Account;
 import com.wordnik.swagger.annotations.Api;
 import io.dropwizard.jersey.PATCH;
 import io.dropwizard.jersey.params.LongParam;

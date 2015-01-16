@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.theappbusiness</groupId>
-    <artifactId>neo-backend-dropwizard-car-rentals</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <groupId>com.fada21.dropwizard</groupId>
+    <artifactId>dropwizard-car-rentals</artifactId>
+    <version>0.1.1-SNAPSHOT</version>
     <name>Dropwizard backend car rentals</name>
 
     <properties>
@@ -124,7 +124,7 @@
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.theappbusiness.app.CarRentalApp</mainClass>
+                                    <mainClass>com.fada21.dropwizard.app.CarRentalApp</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

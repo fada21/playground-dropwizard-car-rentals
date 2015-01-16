@@ -1,4 +1,4 @@
-package com.theappbusiness.health;
+package com.fada21.dropwizard.health;
 
 import com.codahale.metrics.health.HealthCheck;
 import io.dropwizard.setup.Environment;

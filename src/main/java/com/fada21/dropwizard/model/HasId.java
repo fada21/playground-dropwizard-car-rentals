@@ -1,4 +1,4 @@
-package com.theappbusiness.model;
+package com.fada21.dropwizard.model;
 
 /**
  *

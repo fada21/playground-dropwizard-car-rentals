@@ -1,4 +1,4 @@
-package com.theappbusiness.resources;
+package com.fada21.dropwizard.resources;
 
 public class ResourceUtils {
 

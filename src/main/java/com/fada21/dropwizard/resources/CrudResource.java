@@ -1,7 +1,7 @@
-package com.theappbusiness.resources;
+package com.fada21.dropwizard.resources;
 
-import com.theappbusiness.content.IContentManager;
-import com.theappbusiness.model.HasId;
+import com.fada21.dropwizard.model.HasId;
+import com.fada21.dropwizard.content.IContentManager;
 import io.dropwizard.jersey.params.LongParam;
 
 import javax.ws.rs.*;

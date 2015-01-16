@@ -1,6 +1,4 @@
-package com.theappbusiness.content;
-
-import com.theappbusiness.model.Vehicle;
+package com.fada21.dropwizard.content;
 
 import java.util.List;
 

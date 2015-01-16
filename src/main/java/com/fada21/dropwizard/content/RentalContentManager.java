@@ -1,6 +1,6 @@
-package com.theappbusiness.content;
+package com.fada21.dropwizard.content;
 
-import com.theappbusiness.model.Rental;
+import com.fada21.dropwizard.model.Rental;
 import lombok.Getter;
 import lombok.NonNull;
 

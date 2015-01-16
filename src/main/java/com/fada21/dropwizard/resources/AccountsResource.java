@@ -1,7 +1,7 @@
-package com.theappbusiness.resources;
+package com.fada21.dropwizard.resources;
 
-import com.theappbusiness.content.AccountContentManager;
-import com.theappbusiness.model.Account;
+import com.fada21.dropwizard.content.AccountContentManager;
+import com.fada21.dropwizard.model.Account;
 import com.wordnik.swagger.annotations.Api;
 
 import javax.ws.rs.Path;

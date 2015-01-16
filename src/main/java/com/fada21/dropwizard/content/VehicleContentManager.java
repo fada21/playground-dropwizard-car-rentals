@@ -1,6 +1,6 @@
-package com.theappbusiness.content;
+package com.fada21.dropwizard.content;
 
-import com.theappbusiness.model.Vehicle;
+import com.fada21.dropwizard.model.Vehicle;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;

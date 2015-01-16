@@ -1,12 +1,12 @@
-package com.theappbusiness.app;
+package com.fada21.dropwizard.app;
 
-import com.theappbusiness.content.AccountContentManager;
-import com.theappbusiness.content.RentalContentManager;
-import com.theappbusiness.content.VehicleContentManager;
-import com.theappbusiness.health.IsStartedHealthCheck;
-import com.theappbusiness.resources.AccountsResource;
-import com.theappbusiness.resources.RentalsResource;
-import com.theappbusiness.resources.VehiclesResource;
+import com.fada21.dropwizard.content.AccountContentManager;
+import com.fada21.dropwizard.content.RentalContentManager;
+import com.fada21.dropwizard.content.VehicleContentManager;
+import com.fada21.dropwizard.health.IsStartedHealthCheck;
+import com.fada21.dropwizard.resources.AccountsResource;
+import com.fada21.dropwizard.resources.RentalsResource;
+import com.fada21.dropwizard.resources.VehiclesResource;
 import com.wordnik.swagger.config.ConfigFactory;
 import com.wordnik.swagger.config.ScannerFactory;
 import com.wordnik.swagger.config.SwaggerConfig;
